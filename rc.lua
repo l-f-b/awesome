@@ -542,10 +542,10 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, "v", function () awful.util.spawn(vedio) end),
     awful.key({ modkey }, "s", function () awful.util.spawn(gui_editor) end),
     awful.key({ modkey }, "g", function () awful.util.spawn(graphics) end),
+    awful.key({ modkey }, "r", function () mypromptbox[mouse.screen]:run() end),
 
     --[[ Default
     -- Prompt
-    awful.key({ modkey }, "r", function () mypromptbox[mouse.screen]:run() end),
 
     awful.key({ modkey }, "x",
               function ()
