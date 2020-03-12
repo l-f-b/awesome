@@ -60,7 +60,7 @@ beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/powerarrow-darker/t
 -- common
 modkey     = "Mod4"
 altkey     = "Mod1"
-terminal   = "gnome-terminal"
+terminal   = "xterm"
 editor     = os.getenv("EDITOR") or "nano" or "vi"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -92,7 +92,7 @@ end
 -- {{{ Tags
 tags = {
    names = { "terminal", "chrome", "ieda", "emacs", "qq", "office"},
-   layout = { layouts[1], layouts[2], layouts[3], layouts[1], layouts[4] }
+   layout = { layouts[1], layouts[2], layouts[3], layouts[1], layouts[2], layouts[3] }
 }
 
 for s = 1, screen.count() do
@@ -545,7 +545,6 @@ globalkeys = awful.util.table.join(
 
     --[[ Default
     -- Prompt
-    awful.key({ modkey }, "r", function () mypromptbox[mouse.screen]:run() end),
 
     awful.key({ modkey }, "x",
               function ()
@@ -559,6 +558,7 @@ globalkeys = awful.util.table.join(
     --]]
 
     -- dmenu
+    awful.key({ modkey }, "r", function () mypromptbox[mouse.screen]:run() end),
     awful.key({ modkey }, "x", function ()
         awful.util.spawn(string.format("dmenu_run -i -fn 'Tamsyn' -nb '%s' -nf '%s' -sb '%s' -sf '%s'",
         beautiful.bg_normal, beautiful.fg_normal, beautiful.bg_focus, beautiful.fg_focus))
